@@ -33,29 +33,30 @@
         </div>
         </nav>
         <div class="container">
+        <form action="{{ url_for('prediction')}}"method="post">
         <div class="columns">
             <div class="column">
                 <div class="field">
                     <label class="label">Competion Distance</label>
                     <div class="control">
-                        <input class="input" type="number" placeholder="Competion Distance">
+                        <input class="input" type="number" placeholder="Competion Distance" name="competion_distance">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Store</label>
                     <div class="control">
-                        <input class="input" type="number" placeholder="Store">
+                        <input class="input" type="number" placeholder="Store" name="Store">
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Promo</label>
                     <div class="control">
                         <label class="radio">
-                        <input type="radio" name="question">
+                        <input type="radio" value=1 name="promo">
                         Yes
                         </label>
                         <label class="radio">
-                        <input type="radio" name="question">
+                        <input type="radio" value=0 name="promo">
                         No
                         </label>
                     </div>
@@ -63,13 +64,29 @@
                 <div class="field">
                     <label class="label">Date</label>
                     <div class="control">
-                        <input class="input" type="date">
+                        <input class="input" type="date" name = "date">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Day of Week</label>
+                    <div class="control">
+                        <div class="select">
+                        <select name="day_of_week">
+                            <option value=1>Monday</option>
+                            <option value=2>Tuesday</option>
+                            <option value=3 >Wednesday</option>
+                            <option value=4>Thrusday</option>
+                            <option value=5>Friday</option>
+                            <option value=6>Saturday</option>
+                            <option value=7>Sunday</option>
+                        </select>
+                        </div>
                     </div>
                 </div>
                 <div class="field">
                     <label class="label">Promo Open Since(Month)</label>
                     <div class="control">
-                        <input class="input" type="number" placeholder="promo">
+                        <input class="input" type="number" placeholder="promo" name="PromoOpen">
                     </div>
                 </div>
                 
@@ -79,7 +96,7 @@
                     <label class="label">Store Type</label>
                     <div class="control">
                         <div class="select">
-                        <select>
+                        <select name="store_type">
                             <option>a</option>
                             <option>b</option>
                             <option>c</option>
@@ -92,10 +109,10 @@
                     <label class="label">Assortment</label>
                     <div class="control">
                         <div class="select">
-                        <select>
-                            <option>a</option>
-                            <option>b</option>
-                            <option>c</option>
+                        <select name="assortment">
+                            <option value="a">a</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
                         </select>
                         </div>
                     </div>
@@ -104,11 +121,11 @@
                     <label class="label">School Holiday</label>
                     <div class="control">
                         <label class="radio">
-                        <input type="radio" name="question">
+                        <input type="radio" value=1 name="school">
                         Yes
                         </label>
                         <label class="radio">
-                        <input type="radio" name="question">
+                        <input type="radio" value=0 name="school">
                         No
                         </label>
                     </div>
@@ -117,11 +134,11 @@
                     <label class="label">State Holiday</label>
                     <div class="control">
                         <div class="select">
-                        <select>
-                            <option>None</option>
-                            <option>Public Holiday</option>
-                            <option>Christmas</option>
-                            <option>Easter</option>
+                        <select name="state_holiday">
+                            <option value="0">None</option>
+                            <option value="a">Public Holiday</option>
+                            <option value="b">Christmas</option>
+                            <option value="c">Easter</option>
                         </select>
                         </div>
                     </div>
@@ -130,11 +147,11 @@
                     <label class="label">Promo2</label>
                     <div class="control">
                         <label class="radio">
-                        <input type="radio" name="question">
+                        <input type="radio" value=1 name="promo2">
                         Yes
                         </label>
                         <label class="radio">
-                        <input type="radio" name="question">
+                        <input type="radio" value=0 name="promo2">
                         No
                         </label>
                     </div>
@@ -143,8 +160,10 @@
                     <button class="button is-primary">Predict Sales</button>
                 </div>
             </div>
+            </form>
             <div class="column">
-                Prediction
+                <h1>Prediction of the model</h1>
+                <h2>{{prediction_text}}</h2>
             </div>
         </div>
         </div>
