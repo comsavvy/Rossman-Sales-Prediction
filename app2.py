@@ -11,8 +11,8 @@ from sklearn.model_selection import train_test_split
 
 def main():
 
-    df = load_data("~/data/train_store.csv")
-    test = load_data("~/data/test_store.csv")
+    df = load_data("data/train_store.csv")
+    test = load_data("data/test_store.csv")
 
     page = st.sidebar.selectbox("Choose a page", ['Homepage', 'Exploration', 'Prediction'])
 
