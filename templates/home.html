@@ -1,0 +1,173 @@
+ <!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import materialize.css-->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+
+    <body>
+        <nav class="navbar is-black" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+            <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            </a>
+        </div>
+
+        <div id="navbarBasicExample" class="navbar-menu">
+            <div class="navbar-start">
+            <a class="navbar-item" href="{{ url_for('index') }}">
+                Home
+            </a>
+            <a class="navbar-item" href="{{ url_for('visualization') }}">
+                Visualization
+            </a>
+            <a class="navbar-item" href="{{ url_for('about') }}">
+                About
+            </a>
+            </div>
+        </div>
+        </nav>
+        <div class="container">
+        <form action="{{ url_for('prediction')}}"method="post">
+        <div class="columns">
+            <div class="column">
+                <div class="field">
+                    <label class="label">Competion Distance</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="Competion Distance" name="competion_distance">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Store</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="Store" name="Store">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Promo</label>
+                    <div class="control">
+                        <label class="radio">
+                        <input type="radio" value=1 name="promo">
+                        Yes
+                        </label>
+                        <label class="radio">
+                        <input type="radio" value=0 name="promo">
+                        No
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Date</label>
+                    <div class="control">
+                        <input class="input" type="date" name = "date">
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Day of Week</label>
+                    <div class="control">
+                        <div class="select">
+                        <select name="day_of_week">
+                            <option value=1>Monday</option>
+                            <option value=2>Tuesday</option>
+                            <option value=3 >Wednesday</option>
+                            <option value=4>Thrusday</option>
+                            <option value=5>Friday</option>
+                            <option value=6>Saturday</option>
+                            <option value=7>Sunday</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Promo Open Since(Month)</label>
+                    <div class="control">
+                        <input class="input" type="number" placeholder="promo" name="PromoOpen">
+                    </div>
+                </div>
+                
+            </div>
+            <div class="column">
+                <div class="field">
+                    <label class="label">Store Type</label>
+                    <div class="control">
+                        <div class="select">
+                        <select name="store_type">
+                            <option>a</option>
+                            <option>b</option>
+                            <option>c</option>
+                            <option>d</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Assortment</label>
+                    <div class="control">
+                        <div class="select">
+                        <select name="assortment">
+                            <option value="a">a</option>
+                            <option value="b">b</option>
+                            <option value="c">c</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">School Holiday</label>
+                    <div class="control">
+                        <label class="radio">
+                        <input type="radio" value=1 name="school">
+                        Yes
+                        </label>
+                        <label class="radio">
+                        <input type="radio" value=0 name="school">
+                        No
+                        </label>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">State Holiday</label>
+                    <div class="control">
+                        <div class="select">
+                        <select name="state_holiday">
+                            <option value="0">None</option>
+                            <option value="a">Public Holiday</option>
+                            <option value="b">Christmas</option>
+                            <option value="c">Easter</option>
+                        </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label class="label">Promo2</label>
+                    <div class="control">
+                        <label class="radio">
+                        <input type="radio" value=1 name="promo2">
+                        Yes
+                        </label>
+                        <label class="radio">
+                        <input type="radio" value=0 name="promo2">
+                        No
+                        </label>
+                    </div>
+                </div>
+                <div class="control">
+                    <button class="button is-primary">Predict Sales</button>
+                </div>
+            </div>
+            </form>
+            <div class="column">
+                <h1>Prediction of the model</h1>
+                <h2>{{prediction_text}}</h2>
+            </div>
+        </div>
+        </div>
+        
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    </body>
+  </html>
