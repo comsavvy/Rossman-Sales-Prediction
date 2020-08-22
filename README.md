@@ -10,7 +10,7 @@ The Rossmann Store Sales problem is a [Kaggle Competition](https://www.kaggle.co
 
 1. Chala Getu ([GETUCHALA20](https://github.com/GETUCHALA20))
 2. Olusola Timothy Ogundepo ([comsavvy](https://github.com/comsavvy))
-3.Natanan Shiferaw  ([natananshiferaw](https://github.com/natananshiferaw))
+3. Natanan Shiferaw  ([natananshiferaw](https://github.com/natananshiferaw))
 ## Setup
 
 All code for this project is written in [Python 3](https://www.python.org/downloads/). The list of dependencies can be found in `requirements.txt`. To set up your development environment, navigate to this repository and run the following on a terminal:
