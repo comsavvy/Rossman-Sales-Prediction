@@ -19,10 +19,9 @@ def index():
     return render_template('home.html')
 
 
-@app.route('/prediction',methods=['POST'])
+@app.route('/prediction',methods=['GET','POST'])
 def prediction():
-    return render_template('home.html')
-    #return render_template('prediction.html')
+    return render_template('prediction.html')
 
 @app.route('/visualization')
 def visualization():
