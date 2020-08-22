@@ -6,8 +6,8 @@ import datetime as dt
 import bz2
 
 app = Flask(__name__)
-data = bz2.BZ2File('model.pkl', 'rb')
-model = pickle.load(data)
+# data = bz2.BZ2File('model.pkl', 'rb')
+# model = pickle.load(data)
 
 
 # REMEMBER TO LOAD THE MODEL AND THE SCALER!
