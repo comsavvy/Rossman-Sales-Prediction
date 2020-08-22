@@ -9,7 +9,7 @@ The Rossmann Store Sales problem is a [Kaggle Competition](https://www.kaggle.co
 10 Academy-Team Harar Jugol
 
 1. Chala Getu ([GETUCHALA20](https://github.com/GETUCHALA20))
-
+2. Olusola Timothy Ogundepo ([comsavvy](https://github.com/comsavvy))
 
 ## Setup
 
