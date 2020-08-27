@@ -18,6 +18,7 @@ All code for this project is written in [Python 3](https://www.python.org/downlo
 ```
 $ pip install -r requirements.txt
 ```
+<h4> Visit the website created for the purpose of the analysis <br /><a href= "https://rossman-sales-prediction.herokuapp.com/">here</a> </h4>
 
 The `data/` directory contains all data files downloaded from Kaggle. The all output files are recorded in the `predictions/` directory.
 
